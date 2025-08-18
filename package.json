@@ -1,0 +1,20 @@
+{
+  "name": "filrouge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balnelius19/filrouge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balnelius19/filrouge/issues"
+  },
+  "homepage": "https://github.com/balnelius19/filrouge#readme"
+}
