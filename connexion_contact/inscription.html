@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,40 @@
     <script src="../coucookies/cookies-banner.js"></script>
 </head>
 <body>
-    
+  <h2>Inscription</h2>
+  <form id="form_inscription">
+    <label for="pseudo">Pseudo :</label>
+    <input type="text" id="pseudo" name="pseudo" required><br><br>
+
+    <label for="mot_de_passe">Mot de passe :</label>
+    <input type="password" id="mot_de_passe" name="mot_de_passe" required><br><br>
+
+    <button type="submit">Créer mon personnage</button>
+  </form>
+
+  <script>
+    const form_inscription = document.getElementById('form_inscription');
+
+    form_inscription.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const pseudo = document.getElementById('pseudo').value.trim();
+      const mot_de_passe = document.getElementById('mot_de_passe').value;
+
+      // Création du JSON initial
+      const joueur_data = {
+        pseudo: pseudo,
+        mot_de_passe: mot_de_passe,
+        // Les champs suivants seront ajoutés dans feuille_perso.html
+        personnage: {}
+      };
+
+      // Stockage temporaire (localStorage ou sessionStorage selon ton besoin)
+      localStorage.setItem('joueur_data', JSON.stringify(joueur_data));
+
+      // Redirection vers la feuille de création du personnage
+      window.location.href = '../lien_inscrit/feuille_perso.html';
+    });
+  </script>
 </body>
 </html>

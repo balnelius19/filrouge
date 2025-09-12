@@ -1,12 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../coucookies/cookies-banner.js"></script>
+  <meta charset="UTF-8">
+  <title>feuille_rpg_stats_aleatoires</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    .stat, .info {
+      margin: 5px 0;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 12px;
+      font-weight: bold;
+    }
+    input {
+      padding: 4px;
+      margin-left: 10px;
+    }
+    #inventaire {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+  </style>
 </head>
 <body>
-    
+  <h1 class="titre_principal">feuille_de_personnage</h1>
+
+  <section>
+    <h2 class="sous_titre">identite</h2>
+    <div class="info"><strong>prenom :</strong> <input type="text" id="prenom" placeholder="entrez_le_prenom"></div>
+    <div class="info"><strong>nom :</strong> <input type="text" id="nom" placeholder="entrez_le_nom"></div>
+  </section>
+
+  <section>
+    <h2 class="sous_titre">caracteristiques_aleatoires</h2>
+    <div class="stat"><strong>habilete :</strong> <span id="habilete"></span></div>
+    <div class="stat"><strong>endurance :</strong> <span id="endurance"></span></div>
+    <div class="stat"><strong>force :</strong> <span id="force"></span></div>
+    <div class="stat"><strong>charisme :</strong> <span id="charisme"></span></div>
+    <div class="stat"><strong>points_de_vie :</strong> <span id="points_de_vie"></span></div>
+    <div class="stat"><strong>mana :</strong> <span id="mana"></span></div>
+    <button onclick="generer_stats()">🎲 re_tirer_les_stats</button>
+  </section>
+
+  <section>
+    <h2 class="sous_titre">progression</h2>
+    <div class="stat"><strong>niveau :</strong> <span id="niveau">0</span></div>
+    <div class="stat"><strong>xp :</strong> <span id="xp">0</span></div>
+  </section>
+
+  <section>
+    <h2 class="sous_titre">inventaire</h2>
+    <div id="inventaire">
+      <ul id="liste_inventaire">
+        <!-- objets_ajoutes -->
+      </ul>
+      <input type="text" id="nouvel_objet" placeholder="ajouter_un_objet">
+      <button onclick="ajouter_objet()">➕ ajouter</button>
+    </div>
+  </section>
+
+  <script>
+    function obtenir_stat_aleatoire(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function generer_stats() {
+      document.getElementById('habilete').textContent = obtenir_stat_aleatoire(8, 18);
+      document.getElementById('endurance').textContent = obtenir_stat_aleatoire(8, 18);
+      document.getElementById('force').textContent = obtenir_stat_aleatoire(8, 18);
+      document.getElementById('charisme').textContent = obtenir_stat_aleatoire(8, 18);
+
+      const pv_max = obtenir_stat_aleatoire(30, 60);
+      const pv_actuel = obtenir_stat_aleatoire(10, pv_max);
+      document.getElementById('points_de_vie').textContent = `${pv_actuel} / ${pv_max}`;
+
+      const mana_max = obtenir_stat_aleatoire(20, 50);
+      const mana_actuel = obtenir_stat_aleatoire(5, mana_max);
+      document.getElementById('mana').textContent = `${mana_actuel} / ${mana_max}`;
+    }
+
+    function ajouter_objet() {
+      const objet = document.getElementById('nouvel_objet').value.trim();
+      if (objet) {
+        const li = document.createElement('li');
+        li.textContent = objet;
+        document.getElementById('liste_inventaire').appendChild(li);
+        document.getElementById('nouvel_objet').value = '';
+      }
+    }
+
+    // initialisation
+    generer_stats();
+  </script>
 </body>
 </html>
