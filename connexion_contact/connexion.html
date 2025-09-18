@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../coucookies/cookies-banner.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-    
+    <main id="zone_contact">
+    <form id="formulaire_contact" method="POST" action="me-connecter.php">
+      <h2 class="titre_formulaire">connectez vous</h2>
+
+      <div class="champ_formulaire">
+        <label for="pseudo">pseudo:</label>
+        <input type="text" id="pseudo" name="pseudo" required>
+      </div>
+
+      <div class="champ_formulaire">
+        <label for="mot_de_passe">mot_de_passe :</label>
+        <input type="text" id="mot_de_passe" name="mot_de_passe" required>
+      </div>
+
+      <button type="submit" id="bouton_envoyer">envoyer</button>
+    </form>
+     <a href="../index.html" target="_blank">retour a l'accueil</a>
+  </main>
+
 </body>
 </html>
