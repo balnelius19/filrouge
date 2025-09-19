@@ -1,0 +1,16 @@
+Hello, my name is José miey, and living in Roquecourbe. 
+
+I am currently undergoing training at the digital center of ADRAR, and I am a self-employed  with  diplomas in accounting and in commerce.
+
+
+One of my earliest creations is 858.fr, a website where users become the hero of their own story.
+
+ It’s an interactive, narrative-driven experience inspired by classic adventure books, designed to engage users in playful decision-making and storytelling.
+
+More recently, I developed Roquebiz, a promotional site created this month to support the local market of Roquecourbe. 
+
+He highlights the various participants—artisans, producers, and sellers—giving them an online presence and advertising for them.
+
+During the summer holidays in August, I created LinWitch, a fake Linux distribution that’s more of an artistic and technical experiment. It boots directly into a browser.
+
+"Finally, the main project I’d like to present is Heroclick Adventure. It’s based on the concept of 858.fr, but taken much further. One of the key improvements is the addition of a personal profile that evolves over time, depending on the user’s actions after registration."
